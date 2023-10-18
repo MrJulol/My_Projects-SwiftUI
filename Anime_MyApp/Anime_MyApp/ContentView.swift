@@ -8,14 +8,26 @@
 import SwiftUI
 
 struct ContentView: View {
+    @StateObject private var vm = ViewModel(testMode: true)
+    
     var body: some View {
-        VStack {
-            Image(systemName: "globe")
-                .imageScale(.large)
-                .foregroundStyle(.tint)
-            Text("Hello, world!")
+        ZStack {
+            ContainerRelativeShape()
+            .fill(Color.black.gradient)
+                .ignoresSafeArea()
+            List {
+                ForEach(vm.quotes) { quote in
+                    ItemView(quote: quote)
+                        .padding(4)
+                }
+            }
+            .scrollContentBackground(.hidden)
+            .navigationTitle("AnimeQuotes")
+            .refreshable {
+                vm.makeApiRequest()
+                
+            }
         }
-        .padding()
     }
 }
 

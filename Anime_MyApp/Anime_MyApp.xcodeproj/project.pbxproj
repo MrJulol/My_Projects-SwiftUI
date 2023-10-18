@@ -11,6 +11,12 @@
 		6EDE3ED42ADDBAFD00F43995 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6EDE3ED32ADDBAFD00F43995 /* ContentView.swift */; };
 		6EDE3ED62ADDBAFE00F43995 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6EDE3ED52ADDBAFE00F43995 /* Assets.xcassets */; };
 		6EDE3EDA2ADDBAFE00F43995 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6EDE3ED92ADDBAFE00F43995 /* Preview Assets.xcassets */; };
+		6EDE3EE12ADDBBEC00F43995 /* quotes.json in Resources */ = {isa = PBXBuildFile; fileRef = 6EDE3EE02ADDBBEC00F43995 /* quotes.json */; };
+		6EDE3EE32ADDBC1B00F43995 /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6EDE3EE22ADDBC1B00F43995 /* Model.swift */; };
+		6EDE3EE52ADDBCEA00F43995 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6EDE3EE42ADDBCEA00F43995 /* Extensions.swift */; };
+		6EDE3EE72ADDBF5A00F43995 /* ItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6EDE3EE62ADDBF5A00F43995 /* ItemView.swift */; };
+		6EDE3EE92ADDC0AA00F43995 /* ApiManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6EDE3EE82ADDC0AA00F43995 /* ApiManager.swift */; };
+		6EDE3EEB2ADDC21800F43995 /* ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6EDE3EEA2ADDC21800F43995 /* ViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -20,6 +26,12 @@
 		6EDE3ED52ADDBAFE00F43995 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		6EDE3ED72ADDBAFE00F43995 /* Anime_MyApp.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Anime_MyApp.entitlements; sourceTree = "<group>"; };
 		6EDE3ED92ADDBAFE00F43995 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		6EDE3EE02ADDBBEC00F43995 /* quotes.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = quotes.json; sourceTree = "<group>"; };
+		6EDE3EE22ADDBC1B00F43995 /* Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Model.swift; sourceTree = "<group>"; };
+		6EDE3EE42ADDBCEA00F43995 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
+		6EDE3EE62ADDBF5A00F43995 /* ItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemView.swift; sourceTree = "<group>"; };
+		6EDE3EE82ADDC0AA00F43995 /* ApiManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiManager.swift; sourceTree = "<group>"; };
+		6EDE3EEA2ADDC21800F43995 /* ViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,6 +66,12 @@
 			children = (
 				6EDE3ED12ADDBAFD00F43995 /* Anime_MyAppApp.swift */,
 				6EDE3ED32ADDBAFD00F43995 /* ContentView.swift */,
+				6EDE3EE82ADDC0AA00F43995 /* ApiManager.swift */,
+				6EDE3EEA2ADDC21800F43995 /* ViewModel.swift */,
+				6EDE3EE62ADDBF5A00F43995 /* ItemView.swift */,
+				6EDE3EE22ADDBC1B00F43995 /* Model.swift */,
+				6EDE3EE42ADDBCEA00F43995 /* Extensions.swift */,
+				6EDE3EE02ADDBBEC00F43995 /* quotes.json */,
 				6EDE3ED52ADDBAFE00F43995 /* Assets.xcassets */,
 				6EDE3ED72ADDBAFE00F43995 /* Anime_MyApp.entitlements */,
 				6EDE3ED82ADDBAFE00F43995 /* Preview Content */,
@@ -129,6 +147,7 @@
 			files = (
 				6EDE3EDA2ADDBAFE00F43995 /* Preview Assets.xcassets in Resources */,
 				6EDE3ED62ADDBAFE00F43995 /* Assets.xcassets in Resources */,
+				6EDE3EE12ADDBBEC00F43995 /* quotes.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -140,7 +159,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				6EDE3ED42ADDBAFD00F43995 /* ContentView.swift in Sources */,
+				6EDE3EE32ADDBC1B00F43995 /* Model.swift in Sources */,
+				6EDE3EE52ADDBCEA00F43995 /* Extensions.swift in Sources */,
+				6EDE3EE72ADDBF5A00F43995 /* ItemView.swift in Sources */,
+				6EDE3EE92ADDC0AA00F43995 /* ApiManager.swift in Sources */,
 				6EDE3ED22ADDBAFD00F43995 /* Anime_MyAppApp.swift in Sources */,
+				6EDE3EEB2ADDC21800F43995 /* ViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -274,6 +298,7 @@
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_CFBundleDisplayName = Anime_MyApp;
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphoneos*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphonesimulator*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphoneos*]" = YES;
@@ -312,6 +337,7 @@
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_CFBundleDisplayName = Anime_MyApp;
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphoneos*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphonesimulator*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphoneos*]" = YES;
