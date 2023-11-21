@@ -20,5 +20,9 @@ struct Quote: Decodable, Identifiable {
     }
     
     static var SampleQuotes: [Quote] = Bundle.main.decode(file: "quotes.json")
+    //static var SampleQuotes2: [Quote] = Bundle.main.decode(file: "quotes2.json")
     static var SampleQuote = SampleQuotes.first!
+    //static var SampleQuote2 = SampleQuotes2.first!
+    
+    // ADD 2nd json quotes, add toggle with refresh button
 }

@@ -9,7 +9,6 @@ import Foundation
 
 final class ViewModel: ObservableObject {
     @Published var quotes = [Quote]()
-    
     private let baseURL = "https://animechan.xyz/api/quotes"
     private let apiManager = ApiManager()
     
@@ -36,5 +35,6 @@ final class ViewModel: ObservableObject {
     
     func makeFakeApiRequest() {
         self.quotes = Quote.SampleQuotes
+        
     }
 }

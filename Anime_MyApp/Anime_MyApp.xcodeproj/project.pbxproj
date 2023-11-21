@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		6E8C43822AE12902007E84AD /* quotes2.json in Resources */ = {isa = PBXBuildFile; fileRef = 6E8C43812AE12902007E84AD /* quotes2.json */; };
 		6EDE3ED22ADDBAFD00F43995 /* Anime_MyAppApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6EDE3ED12ADDBAFD00F43995 /* Anime_MyAppApp.swift */; };
 		6EDE3ED42ADDBAFD00F43995 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6EDE3ED32ADDBAFD00F43995 /* ContentView.swift */; };
 		6EDE3ED62ADDBAFE00F43995 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6EDE3ED52ADDBAFE00F43995 /* Assets.xcassets */; };
@@ -20,6 +21,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		6E8C43812AE12902007E84AD /* quotes2.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = quotes2.json; sourceTree = "<group>"; };
 		6EDE3ECE2ADDBAFD00F43995 /* Anime_MyApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Anime_MyApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6EDE3ED12ADDBAFD00F43995 /* Anime_MyAppApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Anime_MyAppApp.swift; sourceTree = "<group>"; };
 		6EDE3ED32ADDBAFD00F43995 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -72,6 +74,7 @@
 				6EDE3EE22ADDBC1B00F43995 /* Model.swift */,
 				6EDE3EE42ADDBCEA00F43995 /* Extensions.swift */,
 				6EDE3EE02ADDBBEC00F43995 /* quotes.json */,
+				6E8C43812AE12902007E84AD /* quotes2.json */,
 				6EDE3ED52ADDBAFE00F43995 /* Assets.xcassets */,
 				6EDE3ED72ADDBAFE00F43995 /* Anime_MyApp.entitlements */,
 				6EDE3ED82ADDBAFE00F43995 /* Preview Content */,
@@ -148,6 +151,7 @@
 				6EDE3EDA2ADDBAFE00F43995 /* Preview Assets.xcassets in Resources */,
 				6EDE3ED62ADDBAFE00F43995 /* Assets.xcassets in Resources */,
 				6EDE3EE12ADDBBEC00F43995 /* quotes.json in Resources */,
+				6E8C43822AE12902007E84AD /* quotes2.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
