@@ -1,0 +1,12 @@
+.title{
+    color:blue;
+    font-style: italic;
+    text-align: center;
+    background-color: yellow;
+}
+div{
+    margin: 5px;
+}
+.example-spacer {
+    flex: 1 1 auto;
+}

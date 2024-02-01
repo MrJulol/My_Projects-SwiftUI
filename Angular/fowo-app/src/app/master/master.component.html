@@ -1,0 +1,11 @@
+<h1>Manage Courses</h1>
+
+<mat-list>
+  <mat-list-item *ngFor="let course of data">
+    <span matListItemTitle>{{ course.title }}</span>
+    <span matListItemLine>KursID: {{ course.id }}</span>
+    <button mat-button (click)="goToDetails(course.id)">
+      <mat-icon>edit</mat-icon> edit
+    </button>
+  </mat-list-item>
+</mat-list>

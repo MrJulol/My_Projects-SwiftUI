@@ -1,0 +1,7 @@
+div{
+    border: 1px solid gray;
+    background-color: lightgray;
+    padding: 5px;
+    margin: 5px;
+    max-width: fit-content;
+}

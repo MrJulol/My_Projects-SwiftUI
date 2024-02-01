@@ -1,0 +1,33 @@
+<div>
+  <ul>
+    <li class="MyTitle">
+      <b>{{ this.input_data.title }}</b>
+    </li>
+    <br />
+    <li>{{ this.input_data.desc }}</li>
+    <br />
+    <li>
+      <img
+        src="{{ this.input_data.photo }}"
+        alt="{{ this.input_data.desc }}"
+        class="photo"
+      />
+    </li>
+    <li *ngIf="this.input_data.price > 0" class="free">
+      <p style="padding-right: 100px">Price:{{ this.input_data.price }}€</p>
+    </li>
+    <li *ngIf="this.input_data.price == 0" class="free">
+      <p style="padding-right: 100px">
+        <b>Get this for free</b>
+      </p>
+    </li>
+    <button
+      mat-icon-button
+      class="example-icon"
+      aria-label="Example icon-button with menu icon"
+      style="display: inline-block; position: relative; right: 0;"
+    >
+      <mat-icon>menu</mat-icon>
+    </button>
+  </ul>
+</div>
