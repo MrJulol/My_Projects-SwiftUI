@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import {DataService} from "../services/data.service";
+import {Course} from "../interfaces/course";
 
 @Component({
   selector: 'app-navigation',
@@ -6,5 +8,10 @@ import { Component } from '@angular/core';
   styleUrl: './navigation.component.css',
 })
 export class NavigationComponent {
+  data: Course[] = [];
+  constructor(private _data : DataService) {
+    this.data = this._data.getData();
+
+  }
 
 }
