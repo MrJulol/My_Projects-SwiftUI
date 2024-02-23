@@ -1,0 +1,9 @@
+div {
+    background-color: lightskyblue;
+    width: 300px;
+    border: 1px solid black;
+    display: inline-block;
+    margin: 5px;
+    padding: 5px;
+    text-align: center;
+}

@@ -11,6 +11,8 @@ export class DataService {
     this.fetchData();
   }
 
+
+
   fetchData() {
     fetch('http://localhost:3000/getdata')
       .then((response) => {

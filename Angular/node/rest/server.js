@@ -41,10 +41,11 @@ const data = [
 ];
 
 app.get("/getdata", (req, res) => {
-
+  console.log("Data sent!")
   res.json(data);
 });
 app.get("/", (req, res) => {
+  console.log("Sent Welcome")
   res.json("Idk random webserver for a Angular Page :3 ~rawr");
 });
 app.listen(3000, () => console.log("Server ready!"));

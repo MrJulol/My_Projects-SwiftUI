@@ -1,0 +1,170 @@
+import sqlite3
+import hashlib
+import customtkinter as ctk
+import time
+
+
+class User:
+    def __init__(self, username):
+        self.username = username
+
+    def set_username(self, username):
+        self.username = username
+
+    def get_username(self):
+        return self.username
+
+
+conn = sqlite3.connect('MyData.db')
+curser = conn.cursor()
+
+data = curser.execute("SELECT * FROM users").fetchone()
+user = User(data[1])
+
+conn.close()
+
+
+
+class SampleApp(ctk.CTk):
+    def __init__(self, *args, **kwargs):
+        ctk.CTk.__init__(self, *args, **kwargs)
+
+        # Container to hold frames
+        container = ctk.CTkFrame(self)
+        container.pack(side="top", fill="both", expand=True)
+        container.grid_rowconfigure(0, weight=1)
+        container.grid_columnconfigure(0, weight=1)
+
+        self.frames = {}
+
+        # Create and add frames to the dictionary
+        for F in (LoginPage, MainPage):
+            frame = F(container, self)
+            self.frames[F] = frame
+            frame.grid(row=0, column=0, sticky="nsew")
+
+        # Show the first frame
+        self.show_frame(LoginPage)
+
+        # Close button
+        close_button = ctk.CTkButton(self, text="Close", command=self.close_app)
+        close_button.pack(side="bottom", anchor="ne", padx=10, pady=5)
+
+    def close_app(self):
+        self.destroy()
+
+    def show_frame(self, cont):
+        frame = self.frames[cont]
+        frame.tkraise()
+
+
+def login(controller, entry1, entry2):
+    username1 = entry1.get()
+    password1 = entry2.get()
+
+    conn = sqlite3.connect("MyData.db")
+    cursor = conn.cursor()
+
+    cursor.execute("SELECT * FROM users WHERE username=?", (username1,))
+    data = cursor.fetchone()
+
+    conn.close()
+
+    if data:
+        hashedpass = data[2]
+        if hashlib.sha256(password1.encode('utf-8')).hexdigest() == hashedpass:
+            print("Logged in")
+            user.set_username(username1)
+            controller.show_frame(MainPage)
+        else:
+            print("Incorrect Password")
+    else:
+        print("User not found")
+
+
+class LoginPage(ctk.CTkFrame):
+    def __init__(self, parent, controller):
+        ctk.CTkFrame.__init__(self, parent)
+        label = ctk.CTkLabel(self, text="Login")
+        label.pack(pady=12, padx=10)
+
+        # UI components
+        entry1 = ctk.CTkEntry(master=self, width=240, height=32, placeholder_text="Username")
+        entry1.pack(pady=12, padx=10)
+
+        entry2 = ctk.CTkEntry(master=self, width=240, height=32, placeholder_text="Password", show="*")
+        entry2.pack(pady=12, padx=10)
+
+        # Button to switch to logged In Frame
+        button = ctk.CTkButton(master=self, width=240, height=32, text="Login",
+                               command=lambda: login(controller, entry1, entry2))
+        button.pack(pady=12, padx=10)
+
+
+def getDatafromDatabase():
+    conn = sqlite3.connect("MyData.db")
+    cursor = conn.cursor()
+    cursor.execute("SELECT * from data where madeby=?", (user.get_username(),))
+    data = cursor.fetchall()
+    conn.commit()
+    conn.close()
+    return data
+
+
+def deleteAll():
+    conn = sqlite3.connect("MyData.db")
+    cursor = conn.cursor()
+    cursor.execute("DROP TABLE data")
+    conn.commit()
+    cursor.execute('''CREATE TABLE IF NOT EXISTS data (
+                            id INTEGER PRIMARY KEY AUTOINCREMENT, 
+                            madeby int, 
+                            Text string
+                        )
+                    ''')
+    conn.commit()
+    conn.close()
+
+
+def destroy(thingy):
+    thingy.destroy()
+    main()
+
+
+class MainPage(ctk.CTkFrame):
+    def __init__(self, parent, controller):
+        ctk.CTkFrame.__init__(self, parent)
+        label = ctk.CTkLabel(self, text="MainPage")
+        label.pack(pady=12, padx=10)
+        data = getDatafromDatabase()  # Call the function to get data
+        print(data)
+        if len(data) == 0:
+            label = ctk.CTkLabel(self, text="No Notes Found")
+        else:
+            label = ctk.CTkLabel(self, text=f"{len(data)} objects in database")
+            for obj in data:
+                objlabel = ctk.CTkLabel(self, text=obj[2])
+                objlabel.pack()
+
+        label.pack()
+        # UI components
+        text = ctk.CTkButton(self, text="Reload Page", command=lambda: destroy(controller))
+        text.pack(padx=10, side="left")
+
+        goBack = ctk.CTkButton(self, text="Logout", command=lambda: controller.show_frame(LoginPage))
+        goBack.pack(padx=10, side="left")
+
+        delete = ctk.CTkButton(self, text="Delete", command=lambda:deleteAll())
+        delete.pack(padx=10, side="left")
+
+
+def main():
+    app = SampleApp()
+    app.geometry("500x700")
+    app.title("Sample App")
+    app.mainloop()
+
+
+
+if __name__ == "__main__":
+    main()
