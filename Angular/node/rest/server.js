@@ -45,7 +45,7 @@ app.get("/getdata", (req, res) => {
   res.json(data);
 });
 app.get("/", (req, res) => {
-  console.log("Sent Welcome")
+  console.log("Welcome sent!")
   res.json("Idk random webserver for a Angular Page :3 ~rawr");
 });
 app.listen(3000, () => console.log("Server ready!"));

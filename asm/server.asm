@@ -1,17 +1,6 @@
 public _start
 
-socket = 97;
-bind = 104
-listen = 106
-accept = 30
-read = 3
-write = 4
-open = 5
-exit = 1
-close = 6
-af_inet = 2
-sock_stream = 1
-o_rdonly = 0x0000
+
 
 section '.text' executable
 _start:
@@ -97,3 +86,15 @@ buffer2:
 db 256 dup 0
 path:
 db 'index.html', 0
+socket = 97;
+bind = 104
+listen = 106
+accept = 30
+read = 3
+write = 4
+open = 5
+exit = 1
+close = 6
+af_inet = 2
+sock_stream = 1
+o_rdonly = 0x0000

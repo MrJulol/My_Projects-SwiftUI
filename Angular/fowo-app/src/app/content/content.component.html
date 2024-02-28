@@ -1,6 +1,6 @@
 <div>
-  <em>
+  <em *ngIf="this.courses.length != 0">
     <app-box *ngFor="let course of courses" [input_data]="course"></app-box>
   </em>
-  
+
 </div>
