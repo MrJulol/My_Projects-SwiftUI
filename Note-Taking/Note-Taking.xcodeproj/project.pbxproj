@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		964CCC9D2B90ABDE00EA42C2 /* TestingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 964CCC9C2B90ABDE00EA42C2 /* TestingView.swift */; };
 		966EAC492B907FED006E38AF /* Note_TakingApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 966EAC482B907FED006E38AF /* Note_TakingApp.swift */; };
 		966EAC4B2B907FED006E38AF /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 966EAC4A2B907FED006E38AF /* ContentView.swift */; };
 		966EAC4D2B907FEE006E38AF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 966EAC4C2B907FEE006E38AF /* Assets.xcassets */; };
@@ -16,6 +17,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		964CCC9C2B90ABDE00EA42C2 /* TestingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestingView.swift; sourceTree = "<group>"; };
 		966EAC452B907FED006E38AF /* Note-Taking.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Note-Taking.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		966EAC482B907FED006E38AF /* Note_TakingApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Note_TakingApp.swift; sourceTree = "<group>"; };
 		966EAC4A2B907FED006E38AF /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -56,12 +58,13 @@
 		966EAC472B907FED006E38AF /* Note-Taking */ = {
 			isa = PBXGroup;
 			children = (
-				966EAC482B907FED006E38AF /* Note_TakingApp.swift */,
 				966EAC4A2B907FED006E38AF /* ContentView.swift */,
-				966EAC572B908068006E38AF /* OtherViews.swift */,
 				966EAC592B908944006E38AF /* Note.swift */,
-				966EAC4C2B907FEE006E38AF /* Assets.xcassets */,
+				966EAC572B908068006E38AF /* OtherViews.swift */,
+				964CCC9C2B90ABDE00EA42C2 /* TestingView.swift */,
+				966EAC482B907FED006E38AF /* Note_TakingApp.swift */,
 				966EAC512B907FEE006E38AF /* Note_Taking.entitlements */,
+				966EAC4C2B907FEE006E38AF /* Assets.xcassets */,
 				966EAC4E2B907FEE006E38AF /* Preview Content */,
 			);
 			path = "Note-Taking";
@@ -146,6 +149,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				966EAC4B2B907FED006E38AF /* ContentView.swift in Sources */,
+				964CCC9D2B90ABDE00EA42C2 /* TestingView.swift in Sources */,
 				966EAC492B907FED006E38AF /* Note_TakingApp.swift in Sources */,
 				966EAC582B908068006E38AF /* OtherViews.swift in Sources */,
 				966EAC5A2B908944006E38AF /* Note.swift in Sources */,

@@ -9,9 +9,17 @@ import SwiftUI
 
 @main
 struct Note_TakingApp: App {
+    var testing = false
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            if(testing){
+                TestingView()
+            }else{
+                ContentView()
+            }
         }
     }
+}
+#Preview{
+    ContentView()
 }
