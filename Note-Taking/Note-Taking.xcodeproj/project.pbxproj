@@ -18,7 +18,7 @@
 
 /* Begin PBXFileReference section */
 		964CCC9C2B90ABDE00EA42C2 /* TestingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestingView.swift; sourceTree = "<group>"; };
-		966EAC452B907FED006E38AF /* Note-Taking.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Note-Taking.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		966EAC452B907FED006E38AF /* RivenNotes.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RivenNotes.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		966EAC482B907FED006E38AF /* Note_TakingApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Note_TakingApp.swift; sourceTree = "<group>"; };
 		966EAC4A2B907FED006E38AF /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		966EAC4C2B907FEE006E38AF /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -50,7 +50,7 @@
 		966EAC462B907FED006E38AF /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				966EAC452B907FED006E38AF /* Note-Taking.app */,
+				966EAC452B907FED006E38AF /* RivenNotes.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -95,7 +95,7 @@
 			);
 			name = "Note-Taking";
 			productName = "Note-Taking";
-			productReference = 966EAC452B907FED006E38AF /* Note-Taking.app */;
+			productReference = 966EAC452B907FED006E38AF /* RivenNotes.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -282,7 +282,8 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				CODE_SIGN_ENTITLEMENTS = "Note-Taking/Note_Taking.entitlements";
+				CODE_SIGN_ENTITLEMENTS = "/Users/riven/MyProjects/Note-Taking/Note-Taking/Note_Taking.entitlements";
+				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				CURRENT_PROJECT_VERSION = 1;
@@ -298,7 +299,7 @@
 				);
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "rivenMyBoi.Note-Taking";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = RivenNotes;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 			};
@@ -309,7 +310,8 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				CODE_SIGN_ENTITLEMENTS = "Note-Taking/Note_Taking.entitlements";
+				CODE_SIGN_ENTITLEMENTS = "/Users/riven/MyProjects/Note-Taking/Note-Taking/Note_Taking.entitlements";
+				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				CURRENT_PROJECT_VERSION = 1;
@@ -325,7 +327,7 @@
 				);
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "rivenMyBoi.Note-Taking";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = RivenNotes;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 			};

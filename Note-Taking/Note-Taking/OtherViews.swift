@@ -10,10 +10,20 @@ import SwiftUI
 struct BackgroundView: View {
     
     var color : Color
+    var isGradient : Bool
 
     var body: some View {
-        ContainerRelativeShape()
-            .fill(color.gradient)
-            .ignoresSafeArea()
+        
+        if(isGradient){
+            ContainerRelativeShape()
+                .fill(color.gradient)
+                .ignoresSafeArea()
+        }else {
+            ContainerRelativeShape()
+                .fill(color)
+                .ignoresSafeArea()
+        }
+        
+        
     }
 }

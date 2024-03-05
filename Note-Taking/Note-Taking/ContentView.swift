@@ -20,6 +20,7 @@ struct ContentView: View {
     @State var taskText: String = ""
     @State var showAlert = false
     @State var deleteall = false
+    @State var noteIsEmpty = false
     @State var itemToDelete: NoteItem?
     
     var deleteAlert: Alert {
@@ -34,6 +35,11 @@ struct ContentView: View {
               message: Text("Are you sure you want to delete all items?"),
               primaryButton: .destructive(Text("Delete"), action: deleteAllNotes),
               secondaryButton: .cancel())
+    }
+    
+    var emptyAlert:Alert{
+        Alert(title: Text("HEy!"),
+              message: Text("Hey!! The Note is empty. U got the stupid"))
     }
     
     var inputView: some View {
@@ -71,16 +77,19 @@ struct ContentView: View {
                         Text("Done")
                     }
                 }
+                .alert(isPresented: $showAlert){
+                    deleteAlert
+                }
             }
         }
-        .alert(isPresented: $showAlert, content: {
-            deleteAlert
-        })
+        .alert(isPresented: $noteIsEmpty){
+            emptyAlert
+        }
     }
     
     var body: some View {
         ZStack {
-            BackgroundView(color: Color.black)
+            BackgroundView(color: Color.darkGrey, isGradient: false)
             VStack {
                 inputView
                 
@@ -105,9 +114,16 @@ struct ContentView: View {
     
     func didTapAddTask() {
         let id = items.reduce(0) { max($0, $1.id) } + 1
+        if(taskText.isEmpty){
+            print("ERROR: Text is empty")
+            noteIsEmpty.toggle()
+        }
+        
+        else{
         items.insert(NoteItem(id: id, text: taskText), at: 0)
         taskText = ""
         save()
+        }
     }
     
     func deleteNote() {
@@ -116,10 +132,17 @@ struct ContentView: View {
         save()
     }
     
+    func printData() {
+        print("\nData: ")
+        for item in items {print(String(item.id) + " : " + item.text)}
+        print("\n")
+    }
+    
     func save() {
         guard let data = try? JSONEncoder().encode(items) else { return }
         UserDefaults.standard.set(data, forKey: "notes")
-        for item in items {print(String(item.id) + " : " + item.text)}
+        printData()
+        
     }
     
     func deleteAllNotes(){
