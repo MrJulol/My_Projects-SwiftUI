@@ -76,7 +76,7 @@ class Logger {
       } else {
          do {
             try message2.write(to: fileURL, atomically: true, encoding: .utf8)
-            print("Logged to new file!")
+            print("Created new Logfile & Logged to File")
          } catch {
             print("Error logging to new file!")
          }
