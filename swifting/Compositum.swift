@@ -13,7 +13,7 @@ struct Leaf: Component {
    }
 
    func add(component: Component) {
-    fatalError("Not executable!!! Is a Leaf")
+      fatalError("Not executable!!! Is a Leaf")
    }
 
    func display(indent: String) {
@@ -42,7 +42,7 @@ class Composite: Component {
 }
 
 func main() {
-   let rootBox: Composite = Composite(name: "Dachboden")
+   let root: Composite = Composite(name: "Dachboden")
 
    let smallBox1: Composite = Composite(name: "Kleine Schachtel 1")
    smallBox1.add(component: Leaf(name: "CD1"))
@@ -61,9 +61,9 @@ func main() {
    largeBox.add(component: smallBox2)
    largeBox.add(component: Leaf(name: "Vinyl"))
 
-   rootBox.add(component: largeBox)
+   root.add(component: largeBox)
 
-   rootBox.display(indent: "")
+   root.display(indent: "")
 }
 
 main()
